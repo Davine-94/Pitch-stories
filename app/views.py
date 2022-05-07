@@ -1,5 +1,8 @@
 from flask import render_template
 from app import app
+from forms import RegistrationForm, LoginForm
+
+app.config['SECRET_KEY'] = '5617b591905a7c411a5c7379e4092bc9'
 
 posts = [
     {
@@ -26,3 +29,13 @@ posts = [
 def home():
     title = 'Pitch Stories'
     return render_template('index.html', title=title, posts=posts)
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)
+
+@app.route('/login')
+def register():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
