@@ -3,5 +3,13 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 {%endblock%} 
 {% block content %}
-
+    <div class="form-section">
+        <form method='POST' action=''>
+        {{form.hidden_tag()}}
+            <fieldset class='form-group'>
+                <legend class='border-bottom md-4'>Join Today
+                </legend>
+            </fieldset>
+        </form>
+    </div> 
 {% endblock content %}
