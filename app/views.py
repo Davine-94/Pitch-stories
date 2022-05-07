@@ -1,9 +1,7 @@
 from flask import render_template
 from app import app
 
-@app.route('/')
-def home():
-    posts = [
+posts = [
     {
         'author': 'Davine Phylis',
         'title': 'Film Pitch',
@@ -23,5 +21,8 @@ def home():
         'date_posted': 'February 14, 2022' 
     }  
     ]
+
+@app.route('/')
+def home():
     title = 'Pitch Stories'
     return render_template('index.html', title=title, posts=posts)
