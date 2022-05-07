@@ -2,3 +2,10 @@
     super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 {%endblock%} 
+{%block content%}
+    {%for post in posts%}
+        <h1> {{ post.title }}</h1>
+        <p> {{ post.content }}</p>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+    {%endfor%}
+{%endblock%}
