@@ -23,6 +23,7 @@ body {
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
+  
   .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -30,3 +31,4 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
   }
+  
