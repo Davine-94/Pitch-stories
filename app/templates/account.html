@@ -2,3 +2,7 @@
     super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
 {%endblock%} 
+
+{%block content%}
+    <h1>{{ current_user.username }}</h1>
+{%endblock%}
