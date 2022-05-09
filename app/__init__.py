@@ -1,11 +1,13 @@
 from flask import Flask
-from config import config_options
+from flask_sqlalchemy import SQLAlchemy
 
-
-# App initialization
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '5617b591905a7c411a5c7379e4092bc9'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+
 from app import views
 
-# Setting up Configuration
-app.config.from_object(config_options)
+
+
 
