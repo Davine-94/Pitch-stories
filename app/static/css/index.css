@@ -1,5 +1,5 @@
 body {
-    background: #fafafa;
+    background: #a2ccc8;
     color: #333333;
     margin-top: 5rem;
   }
@@ -9,11 +9,12 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #8ec2e7;
+    color: #000;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #b83184;
   }
   
   .site-header .navbar-nav .nav-link:hover {
@@ -25,7 +26,7 @@ body {
   }
   
   .content-section {
-    background: #ffffff;
+    background: #e6aedd;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
@@ -71,13 +72,17 @@ body {
     margin-right: 20px;
     margin-bottom: 16px;
   }
+  .site-header {
+    height: 10vh;
+    color:#333;
+  }
   
   .account-heading {
     font-size: 2.5rem;
   } 
   .form-group {
   box-shadow: #460542;
-  background: #40caac;
+  background: #ca40a7;
   opacity:0.9;
   border-radius:#ccc 5px solid;
   top: 150px;
