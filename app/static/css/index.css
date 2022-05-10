@@ -82,9 +82,9 @@ body {
   } 
   .form-group {
   box-shadow: #460542;
-  background: #ca40a7;
+  background: #e6aedd;
   opacity:0.9;
-  border-radius:#ccc 5px solid;
+  border-radius:rgb(48, 45, 45) 5px solid;
   top: 150px;
   left: 50px;
   width: 400px;
@@ -95,10 +95,10 @@ body {
   .form-section {
     padding:7px;
     margin-bottom:10px;
-    border:1px #ccc solid;
+    border:1px rgb(133, 83, 83) solid;
   }
   .form-control{
     padding:7px;
     margin-bottom:10px;
-    border:1px #ccc solid;
+    border:1px rgb(134, 78, 78) solid;
   }
