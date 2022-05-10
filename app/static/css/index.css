@@ -75,3 +75,20 @@ body {
   .account-heading {
     font-size: 2.5rem;
   } 
+  .form-group {
+  box-shadow: #5f788a;
+  background: #CBF3F0;
+  opacity:0.9;
+  border-radius:#ccc 5px solid;
+  top: 150px;
+  left: 50px;
+  width: 400px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 20px;
+
+  }
+  .form-section {
+    padding:7px;
+    margin-bottom:10px;
+    border:1px #ccc solid;
+  }
