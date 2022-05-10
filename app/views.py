@@ -7,30 +7,9 @@ from app.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from app.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-
-posts = [
-    {
-        'author': 'Davine Phylis',
-        'title': 'Film Pitch',
-        'content':'I have a degree in English and a minor in Film Studies, from the UPpen University.I work as a freelance copywriter for local businesses and nonprofits, and a movie critic for the Huffington Post: actually, my recent review of The Favorite got 52 thousand shares on Twitter. Maybe you’ve come across it? Anyways, if you know someone in need of unique, buzz-worthy content, feel free to send them my way',
-        'date_posted':'May 7, 2022'
-    },
-    {
-        'author': 'Paul Durr',
-        'title': 'Interview Pitch',
-        'content':'As a marketing director at KPMG, I coordinate all stages of creating audiovisual marketing materials: from the concept, to execution, to promotion. At the beginning of last year, I got a list of 15 campaigns and a set budget for all of them. Together with our Technology Department, we came up with a strategy of cross-departmental communications calibrating the tech solutions with all team’s talents to cut redundant costs and increase efficiency. Under my leadership, we completed all 15 projects on time and over 10% below budget. By the end of the year, sales from all campaigns contributed to increasing revenue by 48%.',
-        'date_posted':'April 18, 2022'  
-    },
-    {
-        'author': 'Nalah Mumbi',
-        'title':'School Pitch',
-        'content':'Our local high school football team has not won a game in four weeks; the coach is implementing a new strategy that involves a pre-game workout. The players are discouraged. However, the plan is go to our local high school over a three-week period to see what other players are implementing and why it works for them.',
-        'date_posted': 'February 14, 2022' 
-    }  
-    ]
-
 @app.route('/')
 def home():
+    posts = Post.query.all()
     title = 'Pitch Stories'
     return render_template('index.html', title=title, posts=posts)
 
@@ -105,6 +84,9 @@ def account():
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author= current_user)
+        db.session.add(post)
+        db.session.commit()
         flash('Your post has been created','success')
         return redirect(url_for('home'))
     return render_template('create_post.html', title='New Pitch', form=form)
