@@ -9,7 +9,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/')
 def home():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type =int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=3)
     title = 'Pitch Stories'
     return render_template('index.html', title=title, posts=posts)
 
