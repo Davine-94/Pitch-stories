@@ -100,5 +100,6 @@ body {
   .form-control{
     padding:7px;
     margin-bottom:10px;
-    border:1px rgb(134, 78, 78) solid;
+    border:1px 
+    rgb(134, 78, 78) solid;
   }
