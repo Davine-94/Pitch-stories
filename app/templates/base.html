@@ -26,17 +26,17 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
             {% if current_user.is_authenticated %}
-              <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Pitch</a>
-              <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
-              <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+              <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Pitch</a>
+              <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
+              <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
             {% else %}
-              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
             {% endif %}
             </div>
           </div>
@@ -63,16 +63,16 @@
             <p class='text-muted'>You can put any information here you'd like.
               <ul class="list-group">
                 <li class="list-group-item list-group-item-light">
-                  <a href ="{{ url_for('login') }}">Pickup Lines</a>
+                  <a href ="{{ url_for('users.login') }}">Pickup Lines</a>
                 </li>
                 <li class="list-group-item list-group-item-light">
-                  <a href= "{{ url_for('login') }}">Random Pitch</a>
+                  <a href= "{{ url_for('users.login') }}">Random Pitch</a>
                 </li>
                 <li class="list-group-item list-group-item-light">
-                  <a href= "{{ url_for('login') }}">Interview Pitch</a>
+                  <a href= "{{ url_for('users.login') }}">Interview Pitch</a>
                 </li>
                 <li class="list-group-item list-group-item-light">
-                  <a href="{{ url_for('login') }}">Club Pitch</a>
+                  <a href="{{ url_for('users.login') }}">Club Pitch</a>
                 </li>
               </ul>
             </p>
